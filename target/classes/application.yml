@@ -10,7 +10,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: update  # should change to validate in production
     show-sql: true
     properties:
       hibernate:
