@@ -1,5 +1,19 @@
 version: "3.8"
 services:
+  balance-service:
+    image: anolis-registry.cn-zhangjiakou.cr.aliyuncs.com/openanolis/openjdk:17-8.6
+    container_name: :balance-service
+    environment:
+      Province: Hong_Kong
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/balance_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_REDIS_HOST: redis
+    ports:
+        - "8080:8080"
+    depends_on:
+      - postgres, redis
   redis:
     image: redis:7-alpine
     container_name: redis
