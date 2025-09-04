@@ -1,11 +1,13 @@
 package com.sacred.balance.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+@Data
 @Entity
 @Table(name = "transactions",
        indexes = {
@@ -20,7 +22,7 @@ public class Transaction implements Serializable {
     private Long id;
 
     @Column(name = "transactionId")
-    private Long transactionId;
+    private String transactionId;
 
     @Column(name = "sourceAccount")
     private String sourceAccount;
@@ -37,21 +39,4 @@ public class Transaction implements Serializable {
 
     public Transaction() {}
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
-    public Long getTransactionId() { return transactionId; }
-    public void setTransactionId(Long transactionId) { this.transactionId = transactionId; }
-
-    public String getSourceAccount() { return sourceAccount; }
-    public void setSourceAccount(String sourceAccount) { this.sourceAccount = sourceAccount; }
-
-    public String getDestinationAccount() { return destinationAccount; }
-    public void setDestinationAccount(String destinationAccount) { this.destinationAccount = destinationAccount; }
-
-    public double getAmount() { return amount; }
-    public void setAmount(double amount) { this.amount = amount; }
-
-    public LocalDateTime getTimestamp() { return timestamp; }
-    public void setTimestamp(LocalDateTime timestamp) { this.timestamp = timestamp; }
 }

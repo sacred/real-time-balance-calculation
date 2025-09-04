@@ -20,4 +20,5 @@ public class RedisConfig {
         template.setHashValueSerializer(new JdkSerializationRedisSerializer());
         return template;
     }
+
 }

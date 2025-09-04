@@ -1,9 +1,11 @@
 package com.sacred.balance.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.io.Serializable;
 
+@Data
 @Entity
 @Table(name = "accounts",
        indexes = {
@@ -27,12 +29,4 @@ public class Account implements Serializable {
         this.balance = balance;
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
-    public String getAccountNumber() { return accountNumber; }
-    public void setAccountNumber(String accountNumber) { this.accountNumber = accountNumber; }
-
-    public double getBalance() { return balance; }
-    public void setBalance(double balance) { this.balance = balance; }
 }
