@@ -82,3 +82,267 @@ Caused by: java.net.ConnectException: Connection refused
 2025-09-05 16:12:26.434 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-09-05 16:12:26.454 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2025-09-05 16:12:26.463 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-09-05 18:30:46.962 [main] INFO  c.s.b.service.AccountServiceTest - Starting AccountServiceTest using Java 17.0.16 with PID 272210 (started by root in /home/sacred/git/real-time-balance-calculation)
+2025-09-05 18:30:46.979 [main] DEBUG c.s.b.service.AccountServiceTest - Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-09-05 18:30:46.989 [main] INFO  c.s.b.service.AccountServiceTest - No active profile set, falling back to 1 default profile: "default"
+2025-09-05 18:30:52.562 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-05 18:30:52.569 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-05 18:30:53.258 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 653 ms. Found 2 JPA repository interfaces.
+2025-09-05 18:30:53.312 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-05 18:30:53.318 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-09-05 18:30:53.380 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sacred.balance.repository.AccountRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-09-05 18:30:53.383 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sacred.balance.repository.TransactionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-09-05 18:30:53.385 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
+2025-09-05 18:30:58.231 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-05 18:30:58.506 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-09-05 18:30:58.666 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-09-05 18:30:59.738 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-05 18:30:59.882 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-05 18:31:00.912 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=POSTGRES
+2025-09-05 18:31:00.919 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-05 18:31:01.141 [main] WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.2.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 11.0.0. Check the community dialects project for available legacy versions.
+2025-09-05 18:31:01.159 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-05 18:31:04.708 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-05 18:31:04.959 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-05 18:31:09.233 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-05 18:31:14.478 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2025-09-05 18:31:14.881 [main] INFO  c.s.b.service.AccountServiceTest - Started AccountServiceTest in 30.087 seconds (process running for 35.536)
+2025-09-05 18:31:14.939 [scheduling-1] DEBUG c.s.b.s.TransactionRecoveryService - Starting periodic transaction recovery process
+2025-09-05 18:31:16.887 [scheduling-1] DEBUG c.s.b.s.TransactionRecoveryService - No transaction keys found for recovery
+2025-09-05 18:31:18.034 [main] WARN  c.s.balance.service.AccountService - Account not found for balance update: NON_EXISTENT
+2025-09-05 18:31:18.254 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: NON_EXISTENT
+2025-09-05 18:31:18.594 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A005
+2025-09-05 18:31:18.671 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A005, Old Balance: 400.0, Amount: 100.0, New Balance: 500.0
+2025-09-05 18:31:18.904 [pool-4-thread-2] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 200.0, Amount: 5.0, New Balance: 205.0
+2025-09-05 18:31:18.936 [pool-4-thread-1] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 205.0, Amount: 5.0, New Balance: 210.0
+2025-09-05 18:31:18.952 [pool-4-thread-3] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 205.0, Amount: 5.0, New Balance: 210.0
+2025-09-05 18:31:18.979 [pool-4-thread-4] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 210.0, Amount: 5.0, New Balance: 215.0
+2025-09-05 18:31:19.018 [pool-4-thread-5] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 215.0, Amount: 5.0, New Balance: 220.0
+2025-09-05 18:31:19.036 [pool-4-thread-6] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 215.0, Amount: 5.0, New Balance: 220.0
+2025-09-05 18:31:19.045 [pool-4-thread-7] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 220.0, Amount: 5.0, New Balance: 225.0
+2025-09-05 18:31:19.054 [pool-4-thread-8] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 220.0, Amount: 5.0, New Balance: 225.0
+2025-09-05 18:31:19.064 [pool-4-thread-9] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 220.0, Amount: 5.0, New Balance: 225.0
+2025-09-05 18:31:19.075 [pool-4-thread-10] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 220.0, Amount: 5.0, New Balance: 225.0
+2025-09-05 18:31:19.104 [pool-4-thread-11] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 225.0, Amount: 5.0, New Balance: 230.0
+2025-09-05 18:31:19.139 [pool-4-thread-13] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 225.0, Amount: 5.0, New Balance: 230.0
+2025-09-05 18:31:19.152 [pool-4-thread-12] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 230.0, Amount: 5.0, New Balance: 235.0
+2025-09-05 18:31:19.180 [pool-4-thread-14] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 230.0, Amount: 5.0, New Balance: 235.0
+2025-09-05 18:31:19.193 [pool-4-thread-15] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 235.0, Amount: 5.0, New Balance: 240.0
+2025-09-05 18:31:19.235 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A002, Old Balance: 200.0, Amount: 50.0, New Balance: 250.0
+2025-09-05 18:31:19.400 [pool-5-thread-1] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1000.0, Amount: 1.0, New Balance: 1001.0
+2025-09-05 18:31:19.423 [pool-5-thread-2] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1000.0, Amount: 1.0, New Balance: 1001.0
+2025-09-05 18:31:19.435 [pool-5-thread-3] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1001.0, Amount: 1.0, New Balance: 1002.0
+2025-09-05 18:31:19.442 [pool-5-thread-4] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1001.0, Amount: 1.0, New Balance: 1002.0
+2025-09-05 18:31:19.457 [pool-5-thread-5] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1002.0, Amount: 1.0, New Balance: 1003.0
+2025-09-05 18:31:19.482 [pool-5-thread-7] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1003.0, Amount: 1.0, New Balance: 1004.0
+2025-09-05 18:31:19.495 [pool-5-thread-6] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1003.0, Amount: 1.0, New Balance: 1004.0
+2025-09-05 18:31:19.502 [pool-5-thread-8] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1004.0, Amount: 1.0, New Balance: 1005.0
+2025-09-05 18:31:19.511 [pool-5-thread-9] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1004.0, Amount: 1.0, New Balance: 1005.0
+2025-09-05 18:31:19.521 [pool-5-thread-11] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1005.0, Amount: 1.0, New Balance: 1006.0
+2025-09-05 18:31:19.538 [pool-5-thread-10] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1005.0, Amount: 1.0, New Balance: 1006.0
+2025-09-05 18:31:19.624 [pool-5-thread-12] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1006.0, Amount: 1.0, New Balance: 1007.0
+2025-09-05 18:31:19.632 [pool-5-thread-13] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1006.0, Amount: 1.0, New Balance: 1007.0
+2025-09-05 18:31:19.640 [pool-5-thread-15] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1006.0, Amount: 1.0, New Balance: 1007.0
+2025-09-05 18:31:19.664 [pool-5-thread-14] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1007.0, Amount: 1.0, New Balance: 1008.0
+2025-09-05 18:31:19.673 [pool-5-thread-16] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1007.0, Amount: 1.0, New Balance: 1008.0
+2025-09-05 18:31:19.694 [pool-5-thread-17] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1008.0, Amount: 1.0, New Balance: 1009.0
+2025-09-05 18:31:19.701 [pool-5-thread-18] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1008.0, Amount: 1.0, New Balance: 1009.0
+2025-09-05 18:31:19.711 [pool-5-thread-19] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1009.0, Amount: 1.0, New Balance: 1010.0
+2025-09-05 18:31:19.724 [pool-5-thread-20] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 1009.0, Amount: 1.0, New Balance: 1010.0
+2025-09-05 18:31:19.803 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A001
+2025-09-05 18:31:19.922 [pool-6-thread-1] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A006, Old Balance: 500.0, Amount: 10.0, New Balance: 510.0
+2025-09-05 18:31:19.952 [pool-6-thread-2] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A006, Old Balance: 510.0, Amount: 10.0, New Balance: 520.0
+2025-09-05 18:31:19.973 [pool-6-thread-3] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A006, Old Balance: 520.0, Amount: 10.0, New Balance: 530.0
+2025-09-05 18:31:19.982 [pool-6-thread-5] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A006, Old Balance: 520.0, Amount: 10.0, New Balance: 530.0
+2025-09-05 18:31:19.996 [pool-6-thread-4] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A006, Old Balance: 530.0, Amount: 10.0, New Balance: 540.0
+2025-09-05 18:31:20.105 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A004
+2025-09-05 18:31:20.198 [pool-7-thread-1] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A003, Old Balance: 1000.0, Amount: 10.0, New Balance: 1010.0
+2025-09-05 18:31:20.213 [pool-7-thread-2] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A003, Old Balance: 1010.0, Amount: 10.0, New Balance: 1020.0
+2025-09-05 18:31:20.229 [pool-7-thread-3] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A003, Old Balance: 1010.0, Amount: 10.0, New Balance: 1020.0
+2025-09-05 18:31:20.243 [pool-7-thread-4] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A003, Old Balance: 1010.0, Amount: 10.0, New Balance: 1020.0
+2025-09-05 18:31:20.251 [pool-7-thread-5] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A003, Old Balance: 1020.0, Amount: 10.0, New Balance: 1030.0
+2025-09-05 18:31:20.263 [pool-7-thread-6] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A003, Old Balance: 1020.0, Amount: 10.0, New Balance: 1030.0
+2025-09-05 18:31:20.271 [pool-7-thread-7] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A003, Old Balance: 1030.0, Amount: 10.0, New Balance: 1040.0
+2025-09-05 18:31:20.287 [pool-7-thread-8] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A003, Old Balance: 1030.0, Amount: 10.0, New Balance: 1040.0
+2025-09-05 18:31:20.314 [pool-7-thread-9] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A003, Old Balance: 1040.0, Amount: 10.0, New Balance: 1050.0
+2025-09-05 18:31:20.322 [pool-7-thread-10] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A003, Old Balance: 1040.0, Amount: 10.0, New Balance: 1050.0
+2025-09-05 18:31:20.600 [main] WARN  c.s.b.service.TransactionService - Transaction processing timeout, resetting state: T014
+2025-09-05 18:31:20.662 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A016
+2025-09-05 18:31:20.690 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A017
+2025-09-05 18:31:20.710 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A016, Old Balance: 100.0, Amount: -50.0, New Balance: 50.0
+2025-09-05 18:31:20.723 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A017, Old Balance: 0.0, Amount: 50.0, New Balance: 50.0
+2025-09-05 18:31:20.740 [main] INFO  c.s.b.service.TransactionService - Transaction processed successfully. Transaction ID: T014
+2025-09-05 18:31:20.899 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A001
+2025-09-05 18:31:20.919 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A002
+2025-09-05 18:31:20.929 [main] WARN  c.s.b.service.TransactionService - Insufficient balance for account: A001, balance: 30.0, amount: 50.0
+2025-09-05 18:31:21.109 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A018
+2025-09-05 18:31:21.124 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A019
+2025-09-05 18:31:21.170 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A018, Old Balance: 100.0, Amount: -30.0, New Balance: 70.0
+2025-09-05 18:31:21.187 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A019, Old Balance: 0.0, Amount: 30.0, New Balance: 30.0
+2025-09-05 18:31:21.194 [main] INFO  c.s.b.service.TransactionService - Transaction processed successfully. Transaction ID: ec972192-ffca-4442-9934-ccb30ae8c788
+2025-09-05 18:31:21.351 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A008
+2025-09-05 18:31:21.368 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A009
+2025-09-05 18:31:21.394 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 300.0, Amount: -50.0, New Balance: 250.0
+2025-09-05 18:31:21.408 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A009, Old Balance: 100.0, Amount: 50.0, New Balance: 150.0
+2025-09-05 18:31:21.424 [main] INFO  c.s.b.service.TransactionService - Transaction processed successfully. Transaction ID: T006
+2025-09-05 18:31:21.514 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 250.0, Amount: -100.0, New Balance: 150.0
+2025-09-05 18:31:21.543 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A009, Old Balance: 150.0, Amount: 100.0, New Balance: 250.0
+2025-09-05 18:31:21.562 [main] INFO  c.s.b.service.TransactionService - Transaction processed successfully. Transaction ID: T007
+2025-09-05 18:31:21.625 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A008, Old Balance: 150.0, Amount: -150.0, New Balance: 0.0
+2025-09-05 18:31:21.643 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A009, Old Balance: 250.0, Amount: 150.0, New Balance: 400.0
+2025-09-05 18:31:21.655 [main] INFO  c.s.b.service.TransactionService - Transaction processed successfully. Transaction ID: T008
+2025-09-05 18:31:21.674 [main] INFO  c.s.b.service.TransactionService - Batch processing completed. Total: 3, Success: 3, Failed: 0
+2025-09-05 18:31:21.784 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A001
+2025-09-05 18:31:21.795 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A002
+2025-09-05 18:31:21.815 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A001, Old Balance: 100.0, Amount: -50.0, New Balance: 50.0
+2025-09-05 18:31:21.834 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A002, Old Balance: 0.0, Amount: 50.0, New Balance: 50.0
+2025-09-05 18:31:21.845 [main] INFO  c.s.b.service.TransactionService - Transaction processed successfully. Transaction ID: T001
+2025-09-05 18:31:22.845 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A012
+2025-09-05 18:31:22.863 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A013
+2025-09-05 18:31:22.889 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A012, Old Balance: 100.0, Amount: -30.0, New Balance: 70.0
+2025-09-05 18:31:22.908 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A013, Old Balance: 50.0, Amount: 30.0, New Balance: 80.0
+2025-09-05 18:31:22.914 [main] INFO  c.s.b.service.TransactionService - Transaction processed successfully. Transaction ID: T012
+2025-09-05 18:31:23.171 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A001
+2025-09-05 18:31:23.188 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A002
+2025-09-05 18:31:23.211 [main] WARN  c.s.b.service.TransactionService - Source account not found: A001
+2025-09-05 18:31:23.342 [pool-8-thread-1] DEBUG c.s.balance.service.AccountService - Finding account by account number: A005
+2025-09-05 18:31:23.359 [pool-8-thread-2] DEBUG c.s.balance.service.AccountService - Finding account by account number: A005
+2025-09-05 18:31:23.373 [pool-8-thread-3] DEBUG c.s.balance.service.AccountService - Finding account by account number: A006
+2025-09-05 18:31:23.375 [pool-8-thread-1] DEBUG c.s.balance.service.AccountService - Finding account by account number: A006
+2025-09-05 18:31:23.399 [pool-8-thread-2] DEBUG c.s.balance.service.AccountService - Finding account by account number: A007
+2025-09-05 18:31:23.425 [pool-8-thread-2] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A005, Old Balance: 1000.0, Amount: -200.0, New Balance: 800.0
+2025-09-05 18:31:23.437 [pool-8-thread-3] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A006, Old Balance: 500.0, Amount: -50.0, New Balance: 450.0
+2025-09-05 18:31:23.438 [pool-8-thread-1] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A005, Old Balance: 1000.0, Amount: -100.0, New Balance: 900.0
+2025-09-05 18:31:23.457 [pool-8-thread-2] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A007, Old Balance: 300.0, Amount: 200.0, New Balance: 500.0
+2025-09-05 18:31:23.465 [pool-8-thread-3] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A005, Old Balance: 1000.0, Amount: 50.0, New Balance: 1050.0
+2025-09-05 18:31:23.469 [pool-8-thread-2] INFO  c.s.b.service.TransactionService - Transaction processed successfully. Transaction ID: T004
+2025-09-05 18:31:23.476 [pool-8-thread-3] INFO  c.s.b.service.TransactionService - Transaction processed successfully. Transaction ID: T005
+2025-09-05 18:31:23.493 [pool-8-thread-1] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A006, Old Balance: 500.0, Amount: 100.0, New Balance: 600.0
+2025-09-05 18:31:23.496 [pool-8-thread-1] INFO  c.s.b.service.TransactionService - Transaction processed successfully. Transaction ID: T003
+2025-09-05 18:31:23.521 [pool-8-thread-3] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 40001, SQLState: 40001
+2025-09-05 18:31:23.521 [pool-8-thread-3] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock detected. The current transaction was rolled back. Details: "ACCOUNTS"; SQL statement:
+update accounts set account_number=?,balance=? where id=? [40001-224]
+2025-09-05 18:31:23.664 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A003
+2025-09-05 18:31:23.684 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A004
+2025-09-05 18:31:23.710 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A003, Old Balance: 200.0, Amount: -50.0, New Balance: 150.0
+2025-09-05 18:31:23.722 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A004, Old Balance: 100.0, Amount: 50.0, New Balance: 150.0
+2025-09-05 18:31:23.731 [main] INFO  c.s.b.service.TransactionService - Transaction processed successfully. Transaction ID: T002
+2025-09-05 18:31:23.757 [main] INFO  c.s.b.service.TransactionService - Transaction already processed: T002
+2025-09-05 18:31:23.874 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A014
+2025-09-05 18:31:23.887 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A015
+2025-09-05 18:31:23.906 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A014, Old Balance: 200.0, Amount: -50.0, New Balance: 150.0
+2025-09-05 18:31:23.923 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A015, Old Balance: 100.0, Amount: 50.0, New Balance: 150.0
+2025-09-05 18:31:23.928 [main] INFO  c.s.b.service.TransactionService - Transaction processed successfully. Transaction ID: T013
+2025-09-05 18:31:24.060 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A010
+2025-09-05 18:31:24.071 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A011
+2025-09-05 18:31:24.092 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A010, Old Balance: 100.0, Amount: -30.0, New Balance: 70.0
+2025-09-05 18:31:24.117 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A011, Old Balance: 50.0, Amount: 30.0, New Balance: 80.0
+2025-09-05 18:31:24.125 [main] INFO  c.s.b.service.TransactionService - Transaction processed successfully. Transaction ID: T009
+2025-09-05 18:31:24.155 [main] WARN  c.s.b.service.TransactionService - Insufficient balance for account: A010, balance: 70.0, amount: 80.0
+2025-09-05 18:31:24.208 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A010, Old Balance: 70.0, Amount: -20.0, New Balance: 50.0
+2025-09-05 18:31:24.225 [main] INFO  c.s.balance.service.AccountService - Account balance updated. Account: A011, Old Balance: 80.0, Amount: 20.0, New Balance: 100.0
+2025-09-05 18:31:24.231 [main] INFO  c.s.b.service.TransactionService - Transaction processed successfully. Transaction ID: T011
+2025-09-05 18:31:24.237 [main] INFO  c.s.b.service.TransactionService - Batch processing completed. Total: 3, Success: 2, Failed: 1
+2025-09-05 18:31:24.340 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A001
+2025-09-05 18:31:24.355 [main] DEBUG c.s.balance.service.AccountService - Finding account by account number: A002
+2025-09-05 18:31:24.366 [main] WARN  c.s.b.service.TransactionService - Destination account not found: A002
+2025-09-05 18:31:24.454 [main] DEBUG c.s.b.s.TransactionRecoveryService - No transaction keys found for recovery
+2025-09-05 18:31:24.513 [main] DEBUG c.s.b.s.TransactionRecoveryService - Transaction recovery completed. No stale transactions found
+2025-09-05 18:31:24.586 [main] INFO  c.s.b.s.TransactionRecoveryService - Recovered stale transaction: STALE_001
+2025-09-05 18:31:24.603 [main] INFO  c.s.b.s.TransactionRecoveryService - Cleaned up transaction without start time: transaction:idempotent:NO_TIME_001
+2025-09-05 18:31:24.605 [main] INFO  c.s.b.s.TransactionRecoveryService - Transaction recovery completed. Recovered 2 stale transactions
+2025-09-05 18:31:24.654 [main] DEBUG c.s.b.s.TransactionRecoveryService - Starting periodic transaction recovery process
+2025-09-05 18:31:24.668 [main] INFO  c.s.b.s.TransactionRecoveryService - Recovered stale transaction: STALE_TX_PERIODIC_001
+2025-09-05 18:31:24.673 [main] INFO  c.s.b.s.TransactionRecoveryService - Transaction recovery completed. Recovered 1 stale transactions
+2025-09-05 18:31:24.773 [main] INFO  c.s.b.s.TransactionRecoveryService - Recovered stale transaction: STALE_TX_002
+2025-09-05 18:31:24.785 [main] INFO  c.s.b.s.TransactionRecoveryService - Recovered stale transaction: STALE_TX_003
+2025-09-05 18:31:24.795 [main] INFO  c.s.b.s.TransactionRecoveryService - Recovered stale transaction: STALE_TX_001
+2025-09-05 18:31:24.797 [main] INFO  c.s.b.s.TransactionRecoveryService - Transaction recovery completed. Recovered 3 stale transactions
+2025-09-05 18:31:24.844 [main] WARN  c.s.b.s.TransactionRecoveryService - Error parsing start time for key: transaction:idempotent:INVALID_TIME_TX_001
+java.time.format.DateTimeParseException: Text 'invalid-time-format' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954)
+	at java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494)
+	at java.base/java.time.LocalDateTime.parse(LocalDateTime.java:479)
+	at com.sacred.balance.service.TransactionRecoveryService.recoverStaleTransactions(TransactionRecoveryService.java:58)
+	at com.sacred.balance.service.TransactionRecoveryServiceTest.shouldHandleInvalidStartTimeFormat(TransactionRecoveryServiceTest.java:145)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+2025-09-05 18:31:24.855 [main] DEBUG c.s.b.s.TransactionRecoveryService - Transaction recovery completed. No stale transactions found
+2025-09-05 18:31:24.902 [main] INFO  c.s.b.s.TransactionRecoveryService - Cleaned up transaction without start time: transaction:idempotent:NO_START_TIME_TX_001
+2025-09-05 18:31:24.903 [main] INFO  c.s.b.s.TransactionRecoveryService - Transaction recovery completed. Recovered 1 stale transactions
+2025-09-05 18:31:24.951 [main] DEBUG c.s.b.s.TransactionRecoveryService - Transaction recovery completed. No stale transactions found
+2025-09-05 18:31:25.014 [main] INFO  c.s.b.s.TransactionRecoveryService - Recovered stale transaction: STALE_TX_001
+2025-09-05 18:31:25.015 [main] INFO  c.s.b.s.TransactionRecoveryService - Transaction recovery completed. Recovered 1 stale transactions
+2025-09-05 18:31:25.330 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-05 18:31:25.346 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-09-05 18:31:25.354 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

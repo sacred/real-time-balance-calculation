@@ -7,7 +7,7 @@ A high-performance, resilient Java-based financial transaction processing system
 ### API Design
 
 ### Deployment architecture
-<img src="files/deploy.jpg" width="500", heigth="300">
+<img src="https://github.com/sacred/real-time-balance-calculation/blob/main/files/deploy.jpg" width="500", heigth="300">
 
 ---
 ## Building
@@ -35,7 +35,8 @@ mvn test jacoco:report
 
 ---
 ## Deployment 
-1. 
+Including local deployment and K8s deployments.
+
 ### On Perm
 Install containers with docker-compose/podman-compose
 

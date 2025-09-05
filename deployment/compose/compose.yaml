@@ -1,8 +1,8 @@
 version: "3.8"
 services:
-  balance-service:
-    image: repo/real-time-balance-calculation:latest
-    container_name: :balance-service
+  balance-service: 
+    image: localhost/repo/real-time-balance-calculation:latest
+    container_name: balance-service
     environment:
       TZ: Asia/Shang_Hai
       SPRING_PROFILES_ACTIVE: docker
