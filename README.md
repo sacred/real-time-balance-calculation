@@ -10,7 +10,7 @@ A high-performance, resilient Java-based financial transaction processing system
 - [ ] In-flight records left by crashes or restarts are swept periodically so they can be re-processed.
 - [ ] Support graceful shutdown and rolling releases during service deployments.
 
-<img width="976" height="1002" alt="image" src="https://github.com/user-attachments/assets/1e3008b5-8656-4021-a9a0-56588859038a" />
+<img width="1016" height="996" alt="image" src="https://github.com/user-attachments/assets/ce1ce03a-9f97-4705-b2f1-b6e9e37e016f" />
 
 ### API Design
 #### 1. Process Single Transaction
