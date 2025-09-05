@@ -7,7 +7,7 @@ A high-performance, resilient Java-based financial transaction processing system
 ### API Design
 
 ### Deployment architecture
-<img src="https://github.com/sacred/real-time-balance-calculation/blob/main/files/deploy.jpg" width="500", heigth="300">
+![deploy](https://github.com/user-attachments/assets/b57222a1-bdb6-44dc-bd87-b91ea984f203)
 
 ---
 ## Building
@@ -32,6 +32,9 @@ Unit testing with JUnit5 and Jacoco, the report file in the directory `target/si
 mvn test jacoco:report
 ```
 [Unit Testing Report](target/site/jacoco/index.html)
+
+<img width="1996" height="636" alt="img_3" src="https://github.com/user-attachments/assets/48ab6f55-e7da-483d-9289-7d9d11d21f4a" />
+
 
 ---
 ## Deployment 
