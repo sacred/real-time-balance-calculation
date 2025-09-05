@@ -3,6 +3,9 @@ A high-performance, resilient Java-based financial transaction processing system
 
 ## Architecture Design
 ### Tech architecture
+
+<img width="976" height="1002" alt="image" src="https://github.com/user-attachments/assets/1e3008b5-8656-4021-a9a0-56588859038a" />
+
 #### Key points
 - [ ] Use Redis as a hot-cache for account data; dual-write ensures consistency, and the balance-query service reads straight from cache.
 - [ ] Lock account writes to prevent concurrent updates, with internal retries.
