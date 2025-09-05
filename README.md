@@ -33,7 +33,7 @@ mvn test jacoco:report
 ```
 [Unit Testing Report](target/site/jacoco/index.html)
 
-<img width="1996" height="636" alt="img_3" src="https://github.com/user-attachments/assets/48ab6f55-e7da-483d-9289-7d9d11d21f4a" />
+<img width="2184" height="442" alt="image" src="https://github.com/user-attachments/assets/da2bfd79-6b5d-4402-a776-38624300c6c5" />
 
 
 ---
@@ -50,6 +50,8 @@ Local testing, for testing use
 ```bash
 bash deployment/compose/start.sh
 ```
+<img width="2690" height="224" alt="image" src="https://github.com/user-attachments/assets/70de5f2e-c28f-4c8c-b51d-fbdb4fbf25f3" />
+
 #### shutdown containers
 ```bash
 bash deployment/compose/stop.sh
@@ -68,6 +70,7 @@ K8s deployment By Helm chart
 ```bash
 bash deployment/k8s/install.sh
 ```
+
 
 #### UnDeploy helm chart
 ```bash
