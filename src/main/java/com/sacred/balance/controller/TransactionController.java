@@ -22,7 +22,7 @@ public class TransactionController {
     @Autowired
     private TransactionService transactionService;
 
-    @PostMapping
+    @PostMapping("/single")
     public ApiResponse<TransactionResult> processTransaction(@RequestBody Transaction transaction) {
         logger.info("Processing transaction request. Source: {}, Destination: {}, Amount: {}",
                    transaction.getSourceAccount(), transaction.getDestinationAccount(), transaction.getAmount());
