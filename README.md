@@ -2,12 +2,12 @@
 A high-performance, resilient Java-based financial transaction processing system deployed on Kubernetes.
 
 ## Architecture Design
-### 
+### Tech architecture
 
-### API
+### API Design
 
 ### Deployment architecture
-#ÕâÀï²åÈëÍ¼Æ¬
+<img src="files/deploy.jpg" width="500", heigth="300">
 
 ---
 ## Building
@@ -31,6 +31,7 @@ Unit testing with JUnit5 and Jacoco, the report file in the directory `target/si
 ```bash
 mvn test jacoco:report
 ```
+[Unit Testing Report](target/site/jacoco/index.html)
 
 ---
 ## Deployment 
