@@ -3,8 +3,54 @@ A high-performance, resilient Java-based financial transaction processing system
 
 ## Architecture Design
 ### Tech architecture
+#### Key points
+- [ ] Use Redis as a hot-cache for account data; dual-write ensures consistency, and the balance-query service reads straight from cache.
+- [ ] Lock account writes to prevent concurrent updates, with internal retries.
+- [ ] For A-to-B transfers, use the transaction ID with Redis to guarantee idempotence—duplicate external calls are safely accepted.
+- [ ] In-flight records left by crashes or restarts are swept periodically so they can be re-processed.
+- [ ] Support graceful shutdown and rolling releases during service deployments.
+
 
 ### API Design
+#### 1. Process Single Transaction
+Processes a single financial transaction between two accounts.
+
+**Endpoint:** `POST /api/transactions/single`  
+**Content-Type:** `application/json`
+
+##### Request Body
+```json 
+{ 
+  "transactionId": "string",
+  "sourceAccount": "string", 
+  "destinationAccount": "string", 
+  "amount": "number"
+}
+```
+##### Response
+```json
+{ "code": "integer", "success": "boolean", "message": "string", "data": { "transactionId": "string", "success": "boolean", "message": "string", "errorCode": "string (optional)" }, "timestamp": "long" }
+ ```
+#### 2. Process Batch Transactions
+Processes multiple financial transactions in a single request.
+
+**Endpoint:** `POST /api/transactions/batch`  
+**Content-Type:** `application/json`
+##### Request Body
+```json 
+[ 
+  { "transactionId": "string", 
+    "sourceAccount": "string", 
+    "destinationAccount": "string", 
+    "amount": "number"
+  }
+]
+```
+##### Response
+```json 
+{ "code": "integer", "success": "boolean", "message": "string", "data": { "batchId": "string", "totalTransactions": "integer", "successfulTransactions": "integer", "failedTransactions": "integer", "results": [ { "transactionId": "string", "success": "boolean", "message": "string", "errorCode": "string" } ] }, "timestamp": "long" }
+```
+
 
 ### Deployment architecture
 ![deploy](https://github.com/user-attachments/assets/b57222a1-bdb6-44dc-bd87-b91ea984f203)
