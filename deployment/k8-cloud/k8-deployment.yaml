@@ -1,0 +1,200 @@
+---
+# Source: balance-calculation/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: balance-calculation
+  labels:
+    helm.sh/chart: balance-calculation-0.1.0
+    app.kubernetes.io/name: balance-calculation
+    app.kubernetes.io/instance: balance-calculation
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+automountServiceAccountToken: true
+---
+# Source: balance-calculation/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: balance-calculation
+  labels:
+    helm.sh/chart: balance-calculation-0.1.0
+    app.kubernetes.io/name: balance-calculation
+    app.kubernetes.io/instance: balance-calculation
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: balance-calculation
+    app.kubernetes.io/instance: balance-calculation
+---
+# Source: balance-calculation/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: balance-calculation
+  labels:
+    helm.sh/chart: balance-calculation-0.1.0
+    app.kubernetes.io/name: balance-calculation
+    app.kubernetes.io/instance: balance-calculation
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: balance-calculation
+      app.kubernetes.io/instance: balance-calculation
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: balance-calculation-0.1.0
+        app.kubernetes.io/name: balance-calculation
+        app.kubernetes.io/instance: balance-calculation
+        app.kubernetes.io/version: "1.16.0"
+        app.kubernetes.io/managed-by: Helm
+    spec:
+      serviceAccountName: balance-calculation
+      securityContext:
+        {}
+      containers:
+        - name: balance-calculation
+          securityContext:
+            {}
+          image: "ecr-repo/balance-calculation:latest"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: http
+            initialDelaySeconds: 60
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: http
+            initialDelaySeconds: 30
+            periodSeconds: 10
+
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 512Mi
+            requests:
+              cpu: 100m
+              memory: 256Mi
+          env:
+            - name: TZ
+              value: Asia/Shang_Hai
+            - name: SERVER_PORT
+              value: "8080"
+            - name: SERVER_SHUTDOWN
+              value: graceful
+            - name: SPRING_LIFECYCLE_TIMEOUT-PER-SHUTDOWN-PHASE
+              value: 25s
+            - name: SPRING_JPA_HIBERNATE_DDL-AUTO
+              value: validate
+            - name: SPRING_DATASOURCE_DRIVER-CLASS-NAME
+              value: org.postgresql.Driver
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://postgres_server:5432/balance_db
+            - name: SPRING_DATASOURCE_USERNAME
+              value: changeit
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: changeit
+            - name: SPRING_REDIS_HOST
+              value: redis_server
+            - name: SPRING_REDIS_PORT
+              value: "6379"
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpresions:
+              - key: app.kubernetes.io/name
+                operator: In
+                values: balance-calculation
+            topologyKey: failure-domain.beta.kubernates.io/zone
+---
+# Source: balance-calculation/templates/hpa.yaml
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: balance-calculation
+  labels:
+    helm.sh/chart: balance-calculation-0.1.0
+    app.kubernetes.io/name: balance-calculation
+    app.kubernetes.io/instance: balance-calculation
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: balance-calculation
+  minReplicas: 2
+  maxReplicas: 20
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 80
+---
+# Source: balance-calculation/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: balance-calculation
+  labels:
+    helm.sh/chart: balance-calculation-0.1.0
+    app.kubernetes.io/name: balance-calculation
+    app.kubernetes.io/instance: balance-calculation
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: ""
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: balance-calculation
+                port:
+                  number: 80
+---
+# Source: balance-calculation/templates/tests/test-connection.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "balance-calculation-test-connection"
+  labels:
+    helm.sh/chart: balance-calculation-0.1.0
+    app.kubernetes.io/name: balance-calculation
+    app.kubernetes.io/instance: balance-calculation
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['balance-calculation:80']
+  restartPolicy: Never

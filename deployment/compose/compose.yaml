@@ -4,14 +4,14 @@ services:
     image: anolis-registry.cn-zhangjiakou.cr.aliyuncs.com/openanolis/openjdk:17-8.6
     container_name: :balance-service
     environment:
-      Province: Hong_Kong
+      TZ: Asia/Shang_Hai
       SPRING_PROFILES_ACTIVE: docker
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/balance_db
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: password
       SPRING_REDIS_HOST: redis
     ports:
-        - "8080:8080"
+        - "8088:8080"
     depends_on:
       - postgres
       - redis
@@ -19,6 +19,8 @@ services:
     image: redis:7-alpine
     container_name: redis
     restart: always
+    environment:
+      TZ: Asia/Shang_Hai
     ports:
       - "6379:6379"
     volumes:
@@ -29,6 +31,7 @@ services:
     container_name: postgres
     restart: always
     environment:
+      TZ: Asia/Shang_Hai
       POSTGRES_DB: balance_db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
