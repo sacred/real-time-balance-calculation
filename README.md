@@ -42,11 +42,11 @@ Install containers with docker-compose/podman-compose
 Will start up DB¡¢cache and the application
 Local testing, for testing use
 
-#### start up containers
+#### startup containers
 ```bash
 bash deployment/compose/start.sh
 ```
-#### down containers
+#### shutdown containers
 ```bash
 bash deployment/compose/stop.sh
 ```
