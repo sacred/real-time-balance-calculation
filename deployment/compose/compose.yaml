@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   balance-service: 
-    image: localhost/repo/real-time-balance-calculation:latest
+    image: repo/real-time-balance-calculation:latest
     container_name: balance-service
     environment:
       TZ: Asia/Shang_Hai

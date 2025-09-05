@@ -48,19 +48,6 @@ public class TransactionController {
     }
 
     /**
-     * 检查交易是否已经处理（幂等性检查）
-     */
-    @GetMapping("/check/{transactionId}")
-    public ApiResponse<Boolean> isTransactionProcessed(@PathVariable String transactionId) {
-        if (transactionId == null || transactionId.isEmpty()) {
-            throw new BusinessException(400, "Transaction ID is required");
-        }
-
-        boolean processed = transactionService.isTransactionProcessed(transactionId);
-        return ApiResponse.success("Transaction check completed", processed);
-    }
-
-    /**
      * 获取交易处理结果
      */
     @GetMapping("/result/{transactionId}")

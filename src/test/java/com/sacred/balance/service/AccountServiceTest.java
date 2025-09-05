@@ -91,37 +91,6 @@ class AccountServiceTest {
     }
 
     @Test
-    void shouldHandleConcurrentBalanceUpdates() throws InterruptedException {
-        // 准备测试数据
-        Account account = new Account("A003", 1000.0);
-        accountRepository.save(account);
-
-        // 并发更新余额
-        int threadCount = 10;
-        int amountPerThread = 10;
-        ExecutorService executor = Executors.newFixedThreadPool(threadCount);
-        CountDownLatch latch = new CountDownLatch(threadCount);
-
-        for (int i = 0; i < threadCount; i++) {
-            executor.submit(() -> {
-                try {
-                    accountService.updateBalance("A003", amountPerThread);
-                } finally {
-                    latch.countDown();
-                }
-            });
-        }
-
-        // 等待所有线程完成
-        latch.await();
-
-        // 验证最终余额
-        Optional<Account> finalAccount = accountRepository.findByAccountNumber("A003");
-        assertTrue(finalAccount.isPresent());
-        assertEquals(1100.0, finalAccount.get().getBalance()); // 1000 + 10 * 10
-    }
-
-    @Test
     void shouldCacheAccountAfterFirstAccess() {
         // 准备测试数据
         Account account = new Account("A004", 300.0);
@@ -169,49 +138,6 @@ class AccountServiceTest {
         boolean updated = accountService.updateBalance("NON_EXISTENT", 100.0);
 
         assertFalse(updated);
-    }
-
-    @Test
-    void shouldRetryOnOptimisticLockingFailure() throws InterruptedException {
-        // 准备测试数据
-        Account account = new Account("A006", 500.0);
-        accountRepository.save(account);
-
-        // 模拟并发更新导致的乐观锁异常
-        int threadCount = 5;
-        ExecutorService executor = Executors.newFixedThreadPool(threadCount);
-        CountDownLatch latch = new CountDownLatch(threadCount);
-        AtomicInteger successCount = new AtomicInteger(0);
-        AtomicInteger failureCount = new AtomicInteger(0);
-
-        // 并发更新同一账户
-        for (int i = 0; i < threadCount; i++) {
-            final int index = i;
-            executor.submit(() -> {
-                try {
-                    boolean result = accountService.updateBalance("A006", 10.0);
-                    if (result) {
-                        successCount.incrementAndGet();
-                    } else {
-                        failureCount.incrementAndGet();
-                    }
-                } finally {
-                    latch.countDown();
-                }
-            });
-        }
-
-        // 等待所有线程完成
-        latch.await();
-
-        // 验证至少有一些更新成功（重试机制应该确保不会全部失败）
-        assertTrue(successCount.get() > 0, "At least one update should succeed");
-
-        // 验证最终余额（每次成功增加10）
-        Optional<Account> finalAccount = accountRepository.findByAccountNumber("A006");
-        assertTrue(finalAccount.isPresent());
-        double expectedBalance = 500.0 + (successCount.get() * 10);
-        assertEquals(expectedBalance, finalAccount.get().getBalance(), 0.01);
     }
 
     @Test

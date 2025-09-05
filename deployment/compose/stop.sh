@@ -1,1 +1,1 @@
-podman-compose down
+docker-compose down
