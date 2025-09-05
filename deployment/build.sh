@@ -1,14 +1,13 @@
 #!/bin/bash
-WORK_DIR=$(pwd)/../
+cd "$(dirname "$0")/.."
 
-cd $WORK_DIR
 echo "Building JAR package..."
 mvn clean package -DskipTests
 
-# 构建Docker镜像
+# ¹¹½¨Docker¾µÏñ
 echo "Building Docker image..."
-cd $WORK_DIR
 docker build -t repo/real-time-balance-calculation:latest .
 docker build -t repo/real-time-balance-calculation:1.0.0 .
 
 echo "Docker images built successfully!"
+
