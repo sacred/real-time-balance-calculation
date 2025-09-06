@@ -89,6 +89,9 @@ load testing with Jmeter
 - load `file/jmeter/balance-calculation.jmx` to jmeter
 - the transaction data is in `file/transaction.csv`
 - run the test
+<img width="2304" height="1440" alt="img_2" src="https://github.com/user-attachments/assets/4a90860d-51a2-4e98-aa00-8e88dce2d4e1" />
+
+<img width="2304" height="1440" alt="img_1" src="https://github.com/user-attachments/assets/8a4ecb29-761d-43ee-9d38-2f7d8880be62" />
 
 
 [Jmeter test plan](file/jmeter/balance-calculation.jmx)
