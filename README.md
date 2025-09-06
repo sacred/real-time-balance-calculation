@@ -1,6 +1,7 @@
 # real-time-balance-calculation
 A high-performance, resilient Java-based financial transaction processing system deployed on Kubernetes.
 
+---
 ## Architecture Design
 ### Tech architecture
 #### Key points
@@ -81,6 +82,16 @@ mvn test jacoco:report
 [Unit Testing Report](target/site/jacoco/index.html)
 
 <img width="2184" height="442" alt="image" src="https://github.com/user-attachments/assets/da2bfd79-6b5d-4402-a776-38624300c6c5" />
+
+#### Load testing
+load testing with Jmeter
+- insert account.csv data to DB, use `file/account.csv`
+- load `file/jmeter/balance-calculation.jmx` to jmeter
+- the transaction data is in `file/transaction.csv`
+- run the test
+
+
+[Jmeter test plan](file/jmeter/balance-calculation.jmx)
 
 
 ---
